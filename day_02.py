@@ -13,12 +13,15 @@ depth = 0
 
 for i in input:
   split = i.split(" ")
-  if split[0] == "forward":
-    horizontal_position += int(split[1])
-  elif split[0] == "up":
-    depth -= int(split[1])
-  elif split[0] == "down":
-    depth += int(split[1])
+  direction = split[0]
+  value = int(split[1])
+
+  if direction == "forward":
+    horizontal_position += value
+  elif direction == "up":
+    depth -= value
+  elif direction == "down":
+    depth += value
 
 star1 = horizontal_position * depth
 
@@ -28,13 +31,16 @@ aim = 0
 
 for i in input:
   split = i.split(" ")
-  if split[0] == "forward":
-    horizontal_position += int(split[1])
-    depth = depth + aim * int(split[1])
-  elif split[0] == "up":
-    aim -= int(split[1])
-  elif split[0] == "down":
-    aim += int(split[1])
+  direction = split[0]
+  value = int(split[1])
+
+  if direction == "forward":
+    horizontal_position += value
+    depth = depth + aim * value
+  elif direction == "up":
+    aim -= value
+  elif direction == "down":
+    aim += value
 
 star2 = horizontal_position * depth
 

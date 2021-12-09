@@ -47,10 +47,11 @@ for i in input:
   # get 0 - contains all chars of 1 and 7, only 3 chars of 4
   for s in input_signals:
     if len(s) == 6:
-      if \
-        len(set(s).intersection(set(digits[1]))) == 2 and \
-        len(set(s).intersection(set(digits[7]))) == 3 and \
-        len(set(s).intersection(set(digits[4]))) == 3:
+      if (
+        len(set(s).intersection(set(digits[1]))) == 2 and
+        len(set(s).intersection(set(digits[7]))) == 3 and
+        len(set(s).intersection(set(digits[4]))) == 3
+      ):
         digits[0] = s
 
   # what's not used in 0?  That's the middle
@@ -95,10 +96,11 @@ for i in input:
   # get 3 - contains all chars of 1 and 7, exactly 5 chars of 9
   for s in input_signals:
     if len(s) == 5:
-      if \
-        len(set(s).intersection(set(digits[1]))) == 2 and \
-        len(set(s).intersection(set(digits[7]))) == 3 and \
-        len(set(s).intersection(set(digits[9]))) == 5:
+      if (
+        len(set(s).intersection(set(digits[1]))) == 2 and
+        len(set(s).intersection(set(digits[7]))) == 3 and
+        len(set(s).intersection(set(digits[9]))) == 5
+      ):
         digits[3] = s
 
   # get 2 - the other 5 char number that's not 5 or 3
@@ -112,10 +114,12 @@ for i in input:
 
   # as long as we're here, add up the quantities of these numbers for star 1
   for signal in output_signals:
-    if len(signal) == 2 or \
-      len(signal) == 3 or \
-      len(signal) == 4 or \
-      len(signal) == 7:
+    if (
+      len(signal) == 2 or
+      len(signal) == 3 or
+      len(signal) == 4 or
+      len(signal) == 7
+    ):
       star1 += 1
 
   output_value = ""
